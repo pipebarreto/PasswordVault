@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" /> 
+
+<head>
+ <title>LOGIN</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<header>
+
+<h1 th:inline="text">Welcome to Password Vault!</h1> 
+
+<p>
+</header>
+
+
+<body>
+
+<div th:if="${param.error}">
+ Invalid username and password.
+</div>
+
+<form th:action="@{/login}" method="post" class="input-group outlet">
+ <div><label> User Name : <input type="text" name="username"/> </label>
+ </div> <div><label> Password: <input type="password" name="password"/></label>
+ </div> <div><input type="submit" value="Sign In"/></div>
+</form>
+
+<p>
+ <h3>User Name: diego</h3>
+ <h3>Password: diego</h3>
+
+</body>
+</html>
