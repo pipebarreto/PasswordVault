@@ -24,7 +24,7 @@ public class PasswordController {
 	 @RequestMapping(value="/login")
 	    public String login() {	
 	        return "login";
-	    }
+	    } 
 	
 	@RequestMapping("/passwordlist")	
 	public String passwordlist(Model model) {
@@ -49,18 +49,13 @@ public class PasswordController {
 	 return "addpassword";
 	}
 
-    @RequestMapping(value = "/rotate/{id}")
-   	public String rotate(@PathVariable("id") Long passwordId, Model model) {
-   	model.addAttribute("password", repository.findById(passwordId));
-   	return  "redirect:../passwordlist";
-   	}
     
     @RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(Password password){
-    	String coded = password.getKeyword();
-    	coded= Rot13.rotate(coded);
-    	password.setKeyword(coded);
-	 repository.save(password);
+    	//Testing saving using Rot13
+    	/*String coded = Rot13.rotate(password.getKeyword());
+    	password.setKeyword(coded);*/
+    	repository.save(password);
 	 return "redirect:passwordlist";
 	}
     

@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.soulwing.rot13.Rot13;
+
+
 
 @Entity
 public class Password {
@@ -17,6 +20,7 @@ public class Password {
 	private String page;
 	private String user;
 	private String keyword;
+	private String keyword2;
 	
 	public Password() {
 		
@@ -50,6 +54,11 @@ public class Password {
 
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	
+
+	public String getKeyword2() {
+		return Rot13.rotate(keyword);
 	}
 
 	public Long getId() {

@@ -23,8 +23,9 @@ public class PasswordVaultApplication {
 	public CommandLineRunner demo(PasswordRepository repository, UserRepository urepository) {
 		return (args) -> {
 			
-			repository.save(new Password ("test.com","user","password"));
-			repository.save(new Password ("www.facebook.com","testing@gmail.com","12345678"));
+			repository.save(new Password ("www.test.com","user","password"));
+			repository.save(new Password ("www.facebook.com","testing@hotmail.com","testing"));
+			repository.save(new Password ("www.google.com","admin@gmail.com","admin"));
 			
 			User user = new User("diego",
 					"$2a$10$AkzWFy0xm43MF4MwpPV/2efMNLWgRrjgr1bOUgqBAErGbm4Sj92o.");
